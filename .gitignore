@@ -1,0 +1,7 @@
+# Local preview helper (not needed for the static Vercel deploy)
+serve.js
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
