@@ -604,12 +604,11 @@
     border-bottom: 1px solid var(--ink);
     margin: 36px 0 28px;
   }
-  .spec-strip .item { padding: 24px 16px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; min-width: 0; }
-  .spec-strip .item:first-child { padding-left: 0; }
-  .spec-strip .item:last-child { border-right: none; padding-right: 0; }
+  .spec-strip .item { padding: 24px 16px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 0; }
+  .spec-strip .item:last-child { border-right: none; }
   .spec-strip .num { font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1.05; color: var(--blue-deep); letter-spacing: -0.015em; font-feature-settings: "lnum"; min-height: calc(38px * 1.05); margin-bottom: 14px; }
   .spec-strip .num small { font-size: 14px; color: var(--ink-soft); font-weight: 400; margin-left: 3px; letter-spacing: 0; }
-  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2); display: flex; align-items: flex-start; }
+  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2); display: flex; align-items: flex-start; justify-content: center; text-align: center; }
 
   /* Stats variant: short numeric headers, bigger type, centered, modest breakout */
   .spec-strip.stats {
@@ -791,6 +790,7 @@
     font-size: 15px;
     font-weight: 500;
     color: var(--ink);
+    text-align: center;
   }
   .cross-table tbody td.featured {
     background: rgba(0,44,95,.06);
@@ -926,11 +926,11 @@
     border-top: 1px solid rgba(255,255,255,.15);
   }
   .trust-grid .item {
-    padding: 8px 28px 8px 0;
+    padding: 8px 28px;
     border-right: 1px solid rgba(255,255,255,.12);
+    text-align: center;
   }
   .trust-grid .item:last-child { border-right: none; }
-  .trust-grid .item:not(:first-child) { padding-left: 28px; }
   .trust-grid .item .num { font-family: var(--display); font-size: 56px; font-weight: 500; line-height: 1; color: var(--white); letter-spacing: -0.02em; font-feature-settings: "lnum"; }
   .trust-grid .item .num small { font-size: 22px; color: #8fb8e0; }
   .trust-grid .item .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 16px; line-height: 1.55; }
@@ -1117,11 +1117,10 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 0;
     }
-    .trust-grid .item { padding: 24px 24px 24px 0 !important; border-right: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); }
-    .trust-grid .item:not(:first-child) { padding-left: 0 !important; }
-    .trust-grid .item:nth-child(2) { padding-left: 24px !important; border-right: none; }
-    .trust-grid .item:nth-child(3) { padding-left: 0 !important; border-bottom: none; }
-    .trust-grid .item:nth-child(4) { padding-left: 24px !important; border-right: none; border-bottom: none; }
+    .trust-grid .item { padding: 24px !important; border-right: 1px solid rgba(255,255,255,.12); border-bottom: 1px solid rgba(255,255,255,.12); }
+    .trust-grid .item:nth-child(2) { border-right: none; }
+    .trust-grid .item:nth-child(3) { border-bottom: none; }
+    .trust-grid .item:nth-child(4) { border-right: none; border-bottom: none; }
     .findlay-extras { gap: 36px; }
     .cross-table { overflow-x: auto; }
     .cross-table table { min-width: 720px; }
@@ -1145,15 +1144,12 @@
     .findlay-band h2 { font-size: 32px; }
     .findlay-band .band-deck { font-size: 17px; }
     .trust-grid { grid-template-columns: 1fr 1fr; padding-top: 36px; margin-top: 44px; }
-    .trust-grid .item { padding: 20px 16px 20px 0 !important; }
-    .trust-grid .item:nth-child(2) { padding-left: 16px !important; }
-    .trust-grid .item:nth-child(3) { padding-left: 0 !important; padding-top: 24px !important; border-top: 1px solid rgba(255,255,255,.12); }
-    .trust-grid .item:nth-child(4) { padding-left: 16px !important; padding-top: 24px !important; border-top: 1px solid rgba(255,255,255,.12); }
+    .trust-grid .item { padding: 20px 16px !important; }
+    .trust-grid .item:nth-child(3) { padding-top: 24px !important; border-top: 1px solid rgba(255,255,255,.12); }
+    .trust-grid .item:nth-child(4) { padding-top: 24px !important; border-top: 1px solid rgba(255,255,255,.12); }
     .trust-grid .item .num { font-size: 40px; }
     .spec-strip { grid-template-columns: 1fr 1fr; }
     .spec-strip .item { border-right: none; border-bottom: 1px solid var(--rule); padding: 24px 16px; }
-    .spec-strip .item:nth-child(odd) { padding-left: 0; }
-    .spec-strip .item:nth-child(even) { padding-right: 0; }
     .glance { padding: 28px; }
     .glance dl { grid-template-columns: 1fr; }
     .safety-banner { grid-template-columns: 1fr; padding: 28px; }
@@ -1249,9 +1245,8 @@
     .wrap { padding: 0 16px !important; }
     .hero-meta { grid-template-columns: 1fr !important; }
     .trust-grid { grid-template-columns: 1fr !important; }
-    .trust-grid .item { border-right: none !important; padding-left: 0 !important; }
+    .trust-grid .item { border-right: none !important; }
     .spec-strip { grid-template-columns: 1fr !important; }
-    .spec-strip .item { padding-right: 0 !important; }
   }
 
 
@@ -1276,7 +1271,7 @@
   <div class="wrap">
     <div class="eyebrow"><span class="pip"></span> Lease &amp; Finance · Dalton Hyundai National City</div>
     <h1>Hyundai <em>lease deals</em> at Dalton Hyundai National City.</h1>
-    <p class="deck">Looking for Hyundai lease deals near San Diego? At 3150 National City Blvd, we work up lease and finance terms on new Hyundai models for drivers across National City, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach. Because lease offers change month to month, we quote your real numbers directly. Call sales at (619) 452-3217 or start at hyundaidalton.com.</p>
+    <p class="deck">Looking for Hyundai lease deals near San Diego? At 3150 National City Blvd, we work up lease and finance terms on new Hyundai models for drivers across National City, Chula Vista, El Cajon, Kearny Mesa, and Imperial Beach. Because lease offers change month to month, we'll give you your actual quote directly. Call sales at (619) 452-3217 or start at hyundaidalton.com.</p>
 
     <div class="hero-meta">
       <div class="item"><div class="lbl">Address</div><div class="val">3150 National City Blvd<small>National City, CA 91950</small></div></div>
@@ -1325,15 +1320,15 @@
       <section class="s" id="why-lease">
         <div class="section-num"><span>01</span><span>From the sales floor</span></div>
         <h2 class="section-h">Why lease your next <em>Hyundai here</em>.</h2>
-        <p class="lede">Leasing makes sense when you want a lower monthly payment, a newer Hyundai every few years, and warranty coverage for the whole term you drive it. The catch is that the headline numbers in ads almost never match what you actually qualify for.</p>
+        <p class="lede no-cap">Leasing makes sense when you want a lower monthly payment, a newer Hyundai every few years, and warranty coverage for the whole term you drive it. The catch is that the headline numbers in ads almost never match what you actually qualify for.</p>
         <p>The advertised payment hinges on your credit tier, the trim you choose, the down payment, and which manufacturer offers are live that month. That's where talking to a real person beats guessing. Our team is, in the dealership's own words, here to guide you every step of the way, in a warm and welcoming environment. For a lease, that means walking you through the term, the mileage allowance, and the money factor in plain language, so you sign knowing exactly what you're getting and what happens at lease-end.</p>
 
         <p>Dalton Hyundai National City is an established Hyundai dealership, previously known as Frank Hyundai, rated 4.3 stars from roughly 2,586 and counting Google reviews. We sell and service new Hyundai vehicles right here in National City, an easy drive for shoppers across the South Bay and greater San Diego. This page was reviewed and posted by our sales team. For a quote or a test drive, call sales at <a class="tel" href="tel:+16194523217">(619) 452-3217</a>.</p>
 
         <h3>A real example from our floor</h3>
-        <p>Last month a couple drove down from El Cajon set on a Tucson lease they'd seen advertised at a teaser payment. When we ran the actual program against their annual mileage, they were putting closer to 18,000 miles a year on their old SUV, not the 12,000 a standard lease assumes, we showed them the overage math on paper. At an excess-mileage charge that on most Hyundai leases runs around $0.20 per mile, those extra 6,000 miles a year would have cost them roughly $1,200 a year at turn-in.</p>
+        <p>Last month a couple drove down from El Cajon set on a Tucson lease they'd seen advertised. When we ran the actual program against their annual mileage, they were putting closer to 18,000 miles a year on their old SUV, not the 12,000 a standard lease assumes. We walked them through the overage. At an excess-mileage charge that on most Hyundai leases runs around $0.20 per mile, those extra 6,000 miles a year would have cost them roughly $1,200 a year at turn-in.</p>
 
-        <p>We steered them toward a higher mileage allowance up front, which raised the monthly slightly but saved them real money at lease-end. That's the kind of conversation a webpage payment can't have with you.</p>
+        <p>We steered them toward a higher mileage allowance up front, which raised the monthly slightly but saved them at lease-end. That's the kind of conversation an online payment platform can't have with you.</p>
 
         <blockquote class="pull">
           Because lease offers change month to month, we quote your real numbers directly rather than posting a payment that won't match your situation.
@@ -1346,7 +1341,7 @@
       <section class="s" id="whats-different">
         <div class="section-num"><span>02</span><span>Why Hyundai pencils out</span></div>
         <h2 class="section-h">What's different about <em>leasing a Hyundai</em>.</h2>
-        <p class="lede">Hyundai is worth understanding on its own terms before you sign anything, because two of its features change the lease math in your favor.</p>
+        <p class="lede no-cap">Hyundai is worth understanding on its own terms before you sign anything, because two of its features change the lease math in your favor.</p>
 
         <h3>1. The warranty covers your whole lease term</h3>
         <p>Hyundai's 10-year / 100,000-mile powertrain coverage is the headline most people know, but the part that matters for a leaseholder is the <strong>5-year / 60,000-mile new-vehicle (bumper-to-bumper) warranty</strong>. A typical lease runs 24 to 39 months, so you are almost always inside that full coverage window the entire time you hold the car. You can confirm current warranty terms on Hyundai's own site at <a href="https://www.hyundaiusa.com" rel="noopener" target="_blank">hyundaiusa.com</a> before you come in, we'll have a printout ready too.</p>
@@ -1361,14 +1356,14 @@
           <div class="item" style="align-items:center; text-align:center; padding-right:16px;"><div class="num">$0.20<small>/mi</small></div><div class="lbl">Typical excess-mileage charge at turn-in</div></div>
         </div>
 
-        <p>The practical upshot: don't just compare a Hyundai's monthly payment to another brand's monthly payment. Compare what each lease actually buys you, the mileage cap, the term, the residual, and what the same money factor looks like across both. We'll lay that out side by side.</p>
+        <p>This means that you don't just want to compare a Hyundai's monthly payment to another brand's monthly payment. Compare what each lease actually buys you, the mileage cap, the term, the residual, and what the same money factor looks like across both. We'll help you through that process.</p>
       </section>
 
       <!-- §03 New Hyundai models you can lease here -->
       <section class="s" id="models">
         <div class="section-num"><span>03</span><span>The lineup</span></div>
         <h2 class="section-h">New Hyundai models <em>you can lease here</em>.</h2>
-        <p class="lede">We lease across the current Hyundai lineup. A quick tour of who each one fits, so you arrive with a shortlist instead of starting from scratch on the lot.</p>
+        <p class="lede no-cap">We lease across the current Hyundai lineup. Here's a quick tour of who each one fits, so you arrive with a shortlist instead of starting from scratch on the lot.</p>
 
         <div class="trims">
           <article class="trim">
@@ -1420,13 +1415,13 @@
       <section class="s" id="lease-quote">
         <div class="section-num"><span>04</span><span>Three steps</span></div>
         <h2 class="section-h">How to get your <em>Hyundai lease quote</em>.</h2>
-        <p class="lede">A lease quote you can trust takes about three steps. None of them require you to commit to anything.</p>
+        <p class="lede no-cap">A lease quote you can trust takes about three steps. None of them require you to commit to anything.</p>
 
         <h3>1. Tell us which Hyundai you want</h3>
         <p>Reach out at hyundaidalton.com or call sales at <a class="tel" href="tel:+16194523217">(619) 452-3217</a>. Let us know the model, trim, and color you're after, plus how many miles you typically drive in a year. That mileage number drives a big part of your lease payment, so an honest estimate up front saves you money at the end.</p>
 
         <h3>2. Get terms matched to current offers</h3>
-        <p>We'll line up the live Hyundai lease and finance programs against your situation and bring you a real quote, term length, monthly payment, money factor, and what's due at signing. If financing to own fits you better than leasing, we'll show you that side by side so the choice is clear.</p>
+        <p>We'll line up the live Hyundai lease and finance programs against your situation and bring you a real quote, term length, monthly payment, money factor, and what's due at signing. If financing to own fits you better than leasing, we'll compare both for you so the choice is clear.</p>
 
         <blockquote class="pull">
           Tell us your honest annual mileage up front. It's the single number that most affects a lease quote, and getting it right saves you money at turn-in.
@@ -1440,7 +1435,7 @@
       <aside class="cta-inline" aria-labelledby="cta-inline-heading">
         <div class="eyebrow">Dalton Hyundai National City</div>
         <h3 id="cta-inline-heading">Get your real Hyundai lease numbers.</h3>
-        <p class="lede">No guesswork and no teaser payments. Tell us the model and your honest annual mileage, and we'll match the current Hyundai lease and finance offers to how you actually drive, then put the numbers on paper before you sign.</p>
+        <p class="lede no-cap">No guesswork and no teaser payments. Tell us the model and your honest annual mileage, and we'll match the current Hyundai lease and finance offers to how you actually drive, then put the numbers on paper before you sign.</p>
         <div class="actions">
           <a class="btn primary" href="https://www.hyundaidalton.com/searchnew.aspx">Browse Hyundai inventory <span class="arrow">→</span></a>
           <a class="btn ghost" href="tel:+16194523217">Call sales · (619) 452-3217</a>
@@ -1457,7 +1452,7 @@
       <section class="s" id="lease-vs-finance">
         <div class="section-num"><span>05</span><span>Which fits you</span></div>
         <h2 class="section-h">Lease vs. finance: <em>which fits you</em>.</h2>
-        <p class="lede">Leasing and financing both put you in a new Hyundai. They just answer different questions, mostly, how long you keep a car and how many miles you put on it.</p>
+        <p class="lede no-cap">Leasing and financing both put you in a new Hyundai. They just answer different questions, mostly, how long you keep a car and how many miles you put on it.</p>
 
         <!-- Desktop: comparison table -->
         <div class="cross-table">
@@ -1465,7 +1460,7 @@
             <thead>
               <tr>
                 <th><span class="visually-hidden">Factor</span></th>
-                <th class="featured" data-vehicle="Lease">
+                <th data-vehicle="Lease">
                   <span class="model">Lease</span>
                   <span class="style">Lower payment · newer car</span>
                 </th>
@@ -1478,32 +1473,32 @@
             <tbody>
               <tr>
                 <th>Monthly payment</th>
-                <td class="featured" data-label="Lease">Lower</td>
+                <td data-label="Lease">Lower</td>
                 <td data-label="Finance">Higher</td>
               </tr>
               <tr>
                 <th>Ownership at end</th>
-                <td class="featured" data-label="Lease">Return or buy out</td>
+                <td data-label="Lease">Return or buy out</td>
                 <td data-label="Finance">You own it</td>
               </tr>
               <tr>
                 <th>Mileage</th>
-                <td class="featured" data-label="Lease">Capped (you pick the allowance)</td>
+                <td data-label="Lease">Capped (you pick the allowance)</td>
                 <td data-label="Finance">Unlimited</td>
               </tr>
               <tr>
                 <th>Best if you keep a car</th>
-                <td class="featured" data-label="Lease">2–3 years</td>
+                <td data-label="Lease">2–3 years</td>
                 <td data-label="Finance">6+ years</td>
               </tr>
               <tr>
                 <th>Warranty during term</th>
-                <td class="featured" data-label="Lease">Fully covered</td>
+                <td data-label="Lease">Fully covered</td>
                 <td data-label="Finance">Covered until limits</td>
               </tr>
               <tr>
                 <th>Upfront cost</th>
-                <td class="featured" data-label="Lease">Often lower</td>
+                <td data-label="Lease">Often lower</td>
                 <td data-label="Finance">Often higher</td>
               </tr>
             </tbody>
@@ -1512,7 +1507,7 @@
 
         <!-- Mobile: stacked comparison cards -->
         <div class="cross-cards">
-          <article class="cross-card featured">
+          <article class="cross-card">
             <div class="cross-card__head">
               <span class="cross-card__pick">Lease</span>
               <h4 class="cross-card__model">Lower payment, newer car</h4>
@@ -1553,7 +1548,7 @@
       <section class="s" id="lease-numbers">
         <div class="section-num"><span>06</span><span>The three numbers</span></div>
         <h2 class="section-h">Understanding your lease numbers <em>before you sign</em>.</h2>
-        <p class="lede">Three numbers decide your lease payment. Knowing them keeps anyone from leasing a car they don't understand.</p>
+        <p class="lede no-cap">Three numbers decide your lease payment. Knowing them keeps anyone from signing a lease they don't understand.</p>
 
         <h3>1. Capitalized cost (the "cap cost")</h3>
         <p>This is the price the lease is built on, essentially the negotiated price of the car. A lower cap cost means a lower payment, which is why negotiating the price still matters even on a lease.</p>
@@ -1577,9 +1572,9 @@
       <section class="s" id="service">
         <div class="section-num"><span>07</span><span>Protecting your lease</span></div>
         <h2 class="section-h">Service that <em>protects your lease</em>.</h2>
-        <p class="lede">A leased Hyundai has to come back in good shape, so staying current on maintenance isn't optional, it protects you from end-of-lease charges.</p>
+        <p class="lede no-cap">A leased Hyundai has to come back in good shape, so staying current on maintenance isn't optional. It protects you from end-of-lease charges.</p>
 
-        <p>Our service department handles that, and every service visit includes a complimentary <strong>In-Drive Alignment Check and Tire Check</strong>, two things that quietly wear over a lease term and can trigger turn-in charges if they're ignored.</p>
+        <p>Our service department handles that, and every service visit includes a complimentary <strong>In-Drive Alignment Check and Tire Check</strong>. Here are two things that quietly wear over a lease term and can trigger turn-in charges if they're ignored.</p>
 
         <h3>Why alignment and tires matter most for a lessee</h3>
         <p>A vehicle that's out of alignment chews tires unevenly, and worn or mismatched tires are one of the most common excess-wear charges assessed at lease-end. Catching alignment drift early on every visit is cheap insurance against a bill later. Tire tread depth in California needs to stay above the legal minimum, and our service team measured tread on a Tucson lease return just last week, caught two tires near the wear bars, and flagged them for the lessee before the turn-in inspection could ding them, cheaper to address early than to eat an excess-wear charge at lease-end.</p>
@@ -1606,14 +1601,8 @@
       <section class="s" id="visit">
         <div class="section-num"><span>08</span><span>Visit or call us</span></div>
         <h2 class="section-h">Visit or call <em>Dalton Hyundai National City</em>.</h2>
-        <p class="lede">We are at <strong>3150 National City Blvd, National City, CA 91950</strong>, right off National City Blvd and a short hop from the 805 and 5 freeways. Ready to talk lease numbers?</p>
+        <p class="lede no-cap">We are at <strong>3150 National City Blvd, National City, CA 91950</strong>, right off National City Blvd and a short hop from the 805 and 5 freeways. Ready to talk lease numbers?</p>
 
-        <div class="spec-strip stats">
-          <div class="item"><div class="num">4.3<small> ★</small></div><div class="lbl">Google rating across 2,586 reviews</div></div>
-          <div class="item"><div class="num">7</div><div class="lbl">Days a week open for sales</div></div>
-          <div class="item"><div class="num">5</div><div class="lbl">South Bay &amp; San Diego areas served</div></div>
-          <div class="item"><div class="num">$0.20<small>/mi</small></div><div class="lbl">Typical lease excess-mileage charge</div></div>
-        </div>
 
         <h3>How to reach us</h3>
         <ul class="bullets">
